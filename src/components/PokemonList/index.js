@@ -67,7 +67,6 @@ export const PokemonList = function PokemonList(props) {
     }
   }
 
-
   return (
     <View style={style.container}>
       <h1>Pokemon</h1>
