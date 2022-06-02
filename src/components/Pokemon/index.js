@@ -21,7 +21,7 @@ export const Pokemon = function Pokemon(props) {
       setError(false);
       try {
     	
-        const result = await contentfulClient.getEntry(id) // note this definitely is not the correct call
+        const result = await contentfulClient.HOWdoWeGetOneEntry() // note this definitely is not the correct call
 
                                                           /* 
                                                            Question 2) How do I retrieve a single entry? We have our id param in the URL
