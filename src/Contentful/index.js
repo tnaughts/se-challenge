@@ -8,5 +8,6 @@ export const contentfulClient = contentful.createClient({
       https://github.com/contentful/contentful.js
 */
 //enter initalizer code here
-
+space: "7r1n0yv048te",
+  accessToken: "TcwaqnZbgyLhHA76NybvMRMzyo7snjKgZkprbNn1NYI"
 })

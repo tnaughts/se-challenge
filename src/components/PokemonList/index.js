@@ -24,7 +24,7 @@ export const PokemonList = function PokemonList(props) {
   useEffect(
     function setPokemonFromApi() {
       const fetchPokemon = async () => {
-      const resp = await contentfulClient.getEntries() /* Question 3a)How do I filter my entries? Right now
+      const resp = await contentfulClient.getEntries({content_type: "pokemon", order: "fields.name"}) /* Question 3a)How do I filter my entries? Right now
                                                           We receive all content types
                                                           We render an error if it is not a Pokemon
                                                           but we need a better solution where we just

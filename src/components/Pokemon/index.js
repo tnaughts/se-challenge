@@ -4,6 +4,7 @@ import idx from "idx";
 import DotLoader from "react-spinners/DotLoader";
 import { Link } from "react-router-dom";
 import {contentfulClient} from "../../Contentful"
+import { useParams } from "react-router-dom";
 
 import { style } from "./style";
 
@@ -12,13 +13,15 @@ export const Pokemon = function Pokemon(props) {
   const [pokemon, setPokemon] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const id = idx(props, _ => _.match.params.id) // We know this is the id of the entry
+  
+  let { id } = useParams();  // We know this is the id of the entry
 
     useEffect(() => {
     const fetchData = async () => {
       setError(false);
       try {
-        const result = await contentfulClient.HowDoWeGetASingleEntry() // note this definitely is not the correct call
+    	
+        const result = await contentfulClient.getEntry(id) // note this definitely is not the correct call
 
                                                           /* 
                                                            Question 2) How do I retrieve a single entry? We have our id param in the URL
